@@ -3,16 +3,17 @@ import CustomerPreview from './CustomerPreview';
 
 const CustomerList = ({ customers, onCustomerClick }) => (
 	<div className="CustomerList">
-		{customers.map(customer =>
+		{Object.keys(customers).map(customerId =>
 			<CustomerPreview 
 			onClick={onCustomerClick}
-			key={customer.id} {...customer} />
+			key={customerId}
+			{...customers[customerId]} />
 		)}
 	</div>
 );
 
 CustomerList.propTypes = {
-	customers: React.PropTypes.array,
+	customers: React.PropTypes.object,
 	onCustomerClick: React.PropTypes.func.isRequired,
 };
 
