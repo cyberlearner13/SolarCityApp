@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class CustomerPreview extends React.Component {
 	handleClick = () => {
-		console.log(this.props.interest);
+		this.props.onClick(this.props.id);
 	};
 	render() {
 		return (
@@ -23,8 +23,10 @@ class CustomerPreview extends React.Component {
 }
 
 CustomerPreview.propTypes = {
+	id: React.PropTypes.number.isRequired,
 	name: React.PropTypes.string.isRequired,
 	interest: React.PropTypes.string.isRequired,
-}
+	onClick: React.PropTypes.func.isRequired,
+};
 
 export default CustomerPreview;
