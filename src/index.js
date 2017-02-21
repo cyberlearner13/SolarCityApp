@@ -3,6 +3,6 @@ import ReactDom from 'react-dom';
 import App from './Components/App';
 
 ReactDom.render(
-	<App />,
+	<App initialCustomers={[]} />,
 	document.getElementById('root')
 );

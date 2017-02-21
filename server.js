@@ -6,8 +6,16 @@ const server = express();
 
 server.set('view engine', 'ejs');
 
-server.get('/', (re, res) => {
-	res.render('index');
+import renderServer from './renderServer';
+
+server.get('/', (req, res) => {
+	renderServer()
+		.then(content => {
+			res.render('index', {
+				content
+			});
+		})
+		.catch(console.error);
 });
 
 server.use('/api', apiRouter);

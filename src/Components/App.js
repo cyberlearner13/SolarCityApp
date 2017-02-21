@@ -6,7 +6,7 @@ import axios from 'axios';
 class App extends React.Component {
 	state = {
 		pageHeader: 'SolarCity',
-		customers: []
+		customers: this.props.initialCustomers
 	};
 
 	componentDidMount() {
