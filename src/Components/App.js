@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import CustomerPreview from './/CustomerPreview';
+import CustomerList from './CustomerList';
 
 class App extends React.Component {
 	state = {
@@ -16,11 +16,7 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<Header message={this.state.pageHeader} />
-				<div>
-					{this.state.customers.map(customer => 
-						<CustomerPreview key={customer.id} {...customer} />
-					)}
-				</div>
+				<CustomerList customers={this.state.customers} />
 			</div>
 		);
 	}
