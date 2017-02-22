@@ -33,6 +33,19 @@ class App extends React.Component {
 		});
 	};
 
+	fetchCustomerList = () => {
+		pushState(
+			{currentCustomerId: null },
+			'/'
+		);
+		api.fetchCustomerList().then(customers => {
+			this.setState({
+				currentCustomerId: null,
+				customers
+			});
+		});
+	};
+
 	currentCustomer() {
 		return this.state.customers[this.state.currentCustomerId];
 	}
@@ -46,7 +59,9 @@ class App extends React.Component {
 	}
 	currentContent() {
 		if(this.state.currentCustomerId) {
-			return <Customer {...this.currentCustomer()} />;
+			return <Customer
+			customerListClick={this.fetchCustomerList}
+			{...this.currentCustomer()} />;
 		}
 
 		return <CustomerList
