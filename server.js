@@ -8,11 +8,12 @@ server.set('view engine', 'ejs');
 
 import renderServer from './renderServer';
 
-server.get('/', (req, res) => {
-	renderServer()
-		.then(content => {
+server.get(['/','/customer/:customerId'], (req, res) => {
+	renderServer(req.params.customerId)
+		.then(({ initialMarkup, initialData }) => {
 			res.render('index', {
-				content
+				initialMarkup,
+				initialData
 			});
 		})
 		.catch(console.error);

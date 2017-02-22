@@ -13,4 +13,9 @@ router.get('/customers', (req, res) => {
 	});
 });
 
+router.get('/customers/:customerId', (req, res) => {
+	let customer = customers[req.params.customerId];
+	res.send(customer);
+});
+
 export default router;

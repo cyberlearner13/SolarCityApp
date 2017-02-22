@@ -5,8 +5,8 @@ const CustomerList = ({ customers, onCustomerClick }) => (
 	<div className="CustomerList">
 		{Object.keys(customers).map(customerId =>
 			<CustomerPreview 
-			onClick={onCustomerClick}
 			key={customerId}
+			onClick={onCustomerClick}
 			{...customers[customerId]} />
 		)}
 	</div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CustomerPreview extends React.Component {
+class CustomerPreview extends Component {
 	handleClick = () => {
 		this.props.onClick(this.props.id);
 	};

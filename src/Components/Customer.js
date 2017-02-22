@@ -4,14 +4,14 @@ class Customer extends React.Component {
 	render() {
 		return (
 			<div className="Customer">
-				{this.props.id}
+				{this.props.interest}
 			</div>
 		);
 	}
 }
 
 Customer.propTypes = {
-	id: React.PropTypes.number.isRequired
+	interest: React.PropTypes.string.isRequired
 };
 
 export default Customer;

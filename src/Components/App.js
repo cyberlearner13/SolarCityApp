@@ -2,15 +2,16 @@ import React from 'react';
 import Header from './Header';
 import CustomerList from './CustomerList';
 import Customer from './Customer';
+import * as api from '../api';
 
 const pushState = (obj, url) =>
 	window.history.pushState(obj, '', url);
 
 class App extends React.Component {
-	state = {
-		pageHeader: 'SolarCity',
-		customers: this.props.initialCustomers
+	static propTypes = {
+		initialData: React.PropTypes.object.isRequired
 	};
+	state = this.props.initialData;
 
 	componentDidMount() {
 		
@@ -21,15 +22,31 @@ class App extends React.Component {
 			{currentCustomerId: customerId },
 			`/customer/${customerId}`
 		);
-		this.setState({
-			pageHeader: this.state.customers[customerId].name,
-			currentCustomerId: customerId
+		api.fetchCustomer(customerId).then(customer => {
+			this.setState({
+				currentCustomerId: customer.id,
+				customers: {
+					...this.state.customers,
+					[customer.id]: customer
+				}
+			});
 		});
 	};
 
+	currentCustomer() {
+		return this.state.customers[this.state.currentCustomerId];
+	}
+
+	pageHeader() {
+		if(this.state.currentCustomerId) {
+			return this.currentCustomer().name;
+		}
+
+		return 'Customers';
+	}
 	currentContent() {
 		if(this.state.currentCustomerId) {
-			return <Customer {...this.state.customers[this.state.currentCustomerId]} />
+			return <Customer {...this.currentCustomer()} />;
 		}
 
 		return <CustomerList
@@ -40,7 +57,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<Header message={this.state.pageHeader} />
+				<Header message={this.pageHeader()} />
 				{this.currentContent()}
 			</div>
 		);
