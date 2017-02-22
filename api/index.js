@@ -1,21 +1,37 @@
 import express from 'express';
-import data from '../src/testData';
+import { MongoClient } from 'mongodb';
+import assert from 'assert';
+import config from '../config';
+
+let mdb;
+MongoClient.connect(config.mongodbUri, (err, db) => {
+	assert.equal(null, err);
+	
+	mdb = db;
+});
 
 const router = express.Router();
-const customers = data.customers.reduce((obj, customer) => {
-	obj[customer.id] = customer;
-	return obj;
-}, {});
 
 router.get('/customers', (req, res) => {
-	res.send({ 
-		customers: customers
-	});
+	let customers = {};
+	mdb.collection('customers').find({})
+		.each((err, customer) => {
+			assert.equal(null, err);
+
+			if(!customer) {
+				res.send({ customers });
+				return;
+			}
+
+			customers[customer.id] = customer;
+		});
 });
 
 router.get('/customers/:customerId', (req, res) => {
-	let customer = customers[req.params.customerId];
-	res.send(customer);
+	mdb.collection('customers')
+		.findOne({ id: Number(req.params.customerId) })
+		.then(customer => res.send(customer))
+		.catch(console.error);
 });
 
 export default router;
