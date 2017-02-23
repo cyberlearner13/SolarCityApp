@@ -17,11 +17,13 @@ server.use(sassMiddleware({
 server.set('view engine', 'ejs');
 
 import renderServer from './renderServer';
-
-server.get(['/','/customer/:customerId'], (req, res) => {
+server.get('/', (req, res) => {
+	res.render('home')
+})
+server.get(['/customer','/customer/:customerId'], (req, res) => {
 	renderServer(req.params.customerId)
 		.then(({ initialMarkup, initialData }) => {
-			res.render('index', {
+			res.render('customer', {
 				initialMarkup,
 				initialData
 			});

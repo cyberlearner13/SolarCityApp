@@ -19,7 +19,6 @@ class App extends React.Component {
 	state = this.props.initialData;
 
 	handleSubmit = (event) => {
-		event.preventDefault();
 		return axios.post('/api/customers', {
 			"name": this.refs.InputName.value,
 			"age": this.refs.InputAge.value,
