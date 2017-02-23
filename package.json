@@ -19,6 +19,7 @@
   "homepage": "https://github.com/TalabH/SolarCityApp#readme",
   "dependencies": {
     "axios": "^0.15.3",
+    "body-parser": "^1.16.1",
     "ejs": "^2.5.5",
     "express": "^4.14.1",
     "json-loader": "^0.5.4",

@@ -3,6 +3,7 @@ import Header from './Header';
 import CustomerList from './CustomerList';
 import Customer from './Customer';
 import * as api from '../api';
+import axios from 'axios';
 
 const pushState = (obj, url) =>
 	window.history.pushState(obj, '', url);
@@ -17,6 +18,18 @@ class App extends React.Component {
 	};
 	state = this.props.initialData;
 
+	handleSubmit = (event) => {
+		event.preventDefault();
+		return axios.post('/api/customers', {
+			"name": this.refs.InputName.value,
+			"age": this.refs.InputAge.value,
+			"address": this.refs.InputAddress.value,
+			"city": this.refs.InputCity.value,
+			"state": this.refs.InputState.value,
+			"zip": this.refs.InputZIP.value,
+			"interest": this.refs.InputInterest.value
+		}).then(resp => resp.data)
+	};
 	componentDidMount() {
 		onPopState((event) => {
 			this.setState({
@@ -69,6 +82,7 @@ class App extends React.Component {
 
 		return 'Customers';
 	}
+
 	currentContent() {
 		if(this.state.currentCustomerId) {
 			return <Customer
@@ -86,33 +100,33 @@ class App extends React.Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-md-8">
-						<form id="form">
+						<form onSubmit={this.handleSubmit}>
 							<div className="form-group">
-    							<label htmlFor="exampleInputName">Name</label>
-    							<input type="text" className="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter name" />
+    							<label htmlFor="InputName">Name</label>
+    							<input type="text" className="form-control" ref="InputName" aria-describedby="nameHelp" placeholder="Enter name" />
     						</div>
     						<div className="form-group">
-    							<label htmlFor="exampleInputAge">Age</label>
-    							<input type="text" className="form-control" id="exampleInputAge" aria-describedby="ageHelp" placeholder="Enter age " />
+    							<label htmlFor="InputAge">Age</label>
+    							<input type="text" className="form-control" ref="InputAge" aria-describedby="ageHelp" placeholder="Enter age " />
     						</div>
     						<div className="form-group">
-    							<label htmlFor="exampleInputAddress">Address</label>
-    							<input type="text" className="form-control" id="exampleInputAddress" aria-describedby="addressHelp" placeholder="Enter address " />
+    							<label htmlFor="InputAddress">Address</label>
+    							<input type="text" className="form-control" ref="InputAddress" aria-describedby="addressHelp" placeholder="Enter address " />
 
-    							<label htmlFor="exampleInputCity">City</label>
-    							<input type="text" className="form-control" id="exampleInputCity" aria-describedby="cityHelp" placeholder="Enter city " />
+    							<label htmlFor="InputCity">City</label>
+    							<input type="text" className="form-control" ref="InputCity" aria-describedby="cityHelp" placeholder="Enter city " />
 
-    							<label htmlFor="exampleInputState">State</label>
-    							<input type="text" className="form-control" id="exampleInputState" aria-describedby="stateHelp" placeholder="Enter state " />
+    							<label htmlFor="InputState">State</label>
+    							<input type="text" className="form-control" ref="InputState" aria-describedby="stateHelp" placeholder="Enter state " />
 
-    							<label htmlFor="exampleInputZIP">ZIP</label>
-    							<input type="text" className="form-control" id="exampleInputZIP" aria-describedby="zipHelp" placeholder="Enter zip " />
+    							<label htmlFor="InputZIP">ZIP</label>
+    							<input type="text" className="form-control" ref="InputZIP" aria-describedby="zipHelp" placeholder="Enter zip " />
     						</div>
     						<div className="form-group">
-    							<label htmlFor="exampleInputInterest">Interest</label>
-    							<textarea type="text" className="form-control" id="exampleInputInterest" aria-describedby="interestHelp" placeholder="Enter interest " />
+    							<label htmlFor="InputInterest">Interest</label>
+    							<textarea type="text" className="form-control" ref="InputInterest" aria-describedby="interestHelp" placeholder="Enter interest " />
     						</div>
-    						<button type="submit" className="btn btn-primary">Submit</button>
+    						<button type="submit" className="btn btn-primary">Im interested</button>
 						</form>
 					</div>
 					<div className="col-md-4">
