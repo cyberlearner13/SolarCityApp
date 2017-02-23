@@ -11,11 +11,6 @@ class CustomerPreview extends Component {
 				  <div className="card-header">
 				    <p>{this.props.name}</p>
 				  </div>
-				  <div className="card-block">
-				    <blockquote className="card-blockquote">
-				      <p>{this.props.interest}</p>
-				    </blockquote>
-				  </div>
 				</div>
 			</div>
 		);
@@ -25,7 +20,6 @@ class CustomerPreview extends Component {
 CustomerPreview.propTypes = {
 	id: React.PropTypes.number.isRequired,
 	name: React.PropTypes.string.isRequired,
-	interest: React.PropTypes.string.isRequired,
 	onClick: React.PropTypes.func.isRequired,
 };
 
