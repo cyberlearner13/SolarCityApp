@@ -11,10 +11,23 @@ body{
 	color: white;
 }
 
+.box{
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: rgba(0,0,0,0.6);
+}
+.Customer{
+    padding: 16px;
+    background-color: #d9d9d9;
+    border-radius:8px;
+    margin-top:16px;
+    margin-bottom:16px;
+    box-shadow:0 24px 24px 0 rgba(0,0,0,0.2),0 40px 77px 0 rgba(0,0,0,0.22);
+}
+.form-group label{
+    color: white;    
+}
 .text-vertical-center {
-    display: table-cell;
-    text-align: center;
-    padding-top: 4%;
 }
 
 .text-vertical-center h2 {

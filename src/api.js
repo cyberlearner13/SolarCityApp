@@ -10,15 +10,5 @@ export const fetchCustomerList = () => {
 		.then(resp => resp.data.customers);
 };
 
-export const addCustomer = (name, age, address, city, state, zip, interest) => {
-	return axios.post('/api/customers', {
-		"name": name,
-		"age": age,
-		"address": address,
-		"city": city,
-		"state": state,
-		"zip": zip,
-		"interest": interest
-	}).then(resp => resp.data)
-};
+
 

@@ -4,6 +4,7 @@ import sassMiddleware from 'node-sass-middleware';
 import path from 'path';
 import bodyParser from 'body-parser';
 
+
 import express from 'express';
 const server = express();
 
@@ -17,10 +18,8 @@ server.use(sassMiddleware({
 server.set('view engine', 'ejs');
 
 import renderServer from './renderServer';
-server.get('/', (req, res) => {
-	res.render('home')
-})
-server.get(['/customer','/customer/:customerId'], (req, res) => {
+
+server.get(['/','/customer/:customerId'], (req, res) => {
 	renderServer(req.params.customerId)
 		.then(({ initialMarkup, initialData }) => {
 			res.render('customer', {

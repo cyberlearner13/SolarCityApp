@@ -2,4 +2,11 @@
     <div id="root"><%- initialMarkup -%></div>
 	<script type="text/javascript">window.initialData = <%- JSON.stringify(initialData) -%>;</script>
 	<script src="/bundle.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		var buttons = document.getElementsByTagName('button');
+		buttons.item(1).addEventListener("mousedown", mouseDown);
+		function mouseDown() {
+			setTimeout(function(){location.reload();}, 500);
+		}
+	</script>
 <%- include('footer') -%>
