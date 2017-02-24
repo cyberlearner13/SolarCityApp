@@ -1,7 +1,7 @@
 
 <center>
 <h1>Solar City App</h1>
-<a href="">Website</a>
+<a href="https://glacial-wave-21085.herokuapp.com/">SolarCity App Website</a>
 <h2>Full Stack MongoDB, Node and React</h2>
 
 <h2>Quick Start</h2>
@@ -10,8 +10,13 @@
 <h6>3. run npm run dev</h6>
 <h6>4. run npm start</h6>
 
-<h5>How to use the API</h5>
+<h5>How to use the website</h5>
+<a href="https://glacial-wave-21085.herokuapp.com/">To view the form and all customers list(on the right)</a><br>
+<a href="https://glacial-wave-21085.herokuapp.com/customer/1">To view a specific user id(on the right of the screen)</a>
 
+<h5>How to use the API</h5>
+<a href="https://glacial-wave-21085.herokuapp.com/api/customers">To view the api JSON of all customers</a><br>
+<a href="https://glacial-wave-21085.herokuapp.com/api/customers/1">To view the api of a specific customer</a>
 
 <h2> Tech Stack</h2>
 Tech Stack :computer: | Description :clipboard:
@@ -32,13 +37,13 @@ Dev Dependencies | Description :clipboard:
     --- | ---
     Webpack | This is the tool I used to translate modular code into something that the browser understands(modular code everywhere)
     Babel (Webpack loader) | This is to transform the JSX extension code into what React understands. 
-    Nodemon | When I change things in the node project, nodemon will monitor our file and auto restart the server 
+    Nodemon | When I change things in the node project, nodemon will monitor our file and auto-restart the server 
 
 <h2>Description</h2>
 
 <p>The architure is split between a back-end and a web front-end. This project is a Node web server and Node API server. I used React on the frontend to consume data through the user interface(single page app). Furthermore, I used MongoDB database to read and write data by providing an in/out RESTful API in JSON.</p>
 
-<p>I have used pure react , so no Redux or even React Router(I used the page State instead). I have adopted the server-render first strategy and made sure my rect frontend application is isomorphic so that it renders initial HTML for all supported routes. This gives me an advatage with SEO, which is very important.</p>
+<p>I have used pure react, so no Redux or even React Router(I used the page State instead). I have adopted the server-render first strategy and made sure my react frontend application is isomorphic so that it renders initial HTML for all supported routes. This gives me an advantage with SEO, which is very important.</p>
 
 <span>** Note how I transform the source files into a bundled file for the browser 'public/bundle.js'. I configured webpack to work with the project structure in the webpack.config.js file on root level</span><br>
 <span>** Note the .babelrc file on the root level is to configure babel to work with our selected presets.</span><br>
@@ -58,14 +63,14 @@ Dev Dependencies | Description :clipboard:
 <p>6. Utilize a simple build script function using npm start</p>
 
 <h2>My technical experience</h2>
-<h5>I built a dozen apps using pure node js(including very strong experience with functional progamming and call-backs) and express js framework (1 year experience)</h5>
+<h5>I built a dozen web apps using pure node js(including very strong experience with functional progamming and call-backs) and express js framework (1 year experience)</h5>
 <h5>I have in depth experience building MERN web apps and using REACT as my front end UI framework (6 months experience)</h5>
 <h5>I am very comfortable using MySQL DBs or NoSQL DBs such as MongoDB and google's Firebase realtime database</h5> 
 
 
 <h2>If more time...</h2>
 <p>If I had more time on this project I would improve the UI/UX of the website and create a backend internal tool for SolarCity sales reps to manage customers information from online individuals that indicate interest in Solar Panels.</p>
-<p>Additionally, I would consume the API I build to build a mobile app using REACT Native</p>
+<p>Additionally, I would consume the API I built to build a mobile app using REACT Native</p>
 
 <h2>Work I'm proud of</h2>
 <a href="https://play.google.com/store/apps/details?id=com.GamifyStudios.SuperHeroJump&hl=en">Mobile Game on play store</a>
