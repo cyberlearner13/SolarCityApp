@@ -43,7 +43,7 @@ Dev Dependencies | Description :clipboard:
 
 <h2>Description</h2>
 
-<p>The architure is split between a back-end and a web front-end. This project is a Node web server and Node API server. I used React on the frontend to consume data through the user interface(single page app). Furthermore, I used MongoDB database to read and write data by providing an in/out RESTful API in JSON. Seperation of react components in a Model-View-Controller style architechture architecture</p>
+<p>The architure is split between a back-end and a web front-end. This project is a Node web server and Node API server. I used React on the frontend to consume data through the user interface(single page app). Furthermore, I used MongoDB database to read and write data by providing an in/out RESTful API in JSON. Seperation of react components in a Model-View-Controller style architecture</p>
 
 <p>I have used pure react, so no Redux or even React Router(I used the page State instead). I have adopted the server-render first strategy and made sure my react frontend application is isomorphic so that it renders initial HTML for all supported routes. This gives me an advantage with SEO, which is very important.</p>
 
