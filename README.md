@@ -11,12 +11,12 @@
 <h6>4. run npm start</h6>
 
 <h5>How to use the website</h5>
-<a href="https://glacial-wave-21085.herokuapp.com/">To view the form and all customers list(on the right)</a><br>
-<a href="https://glacial-wave-21085.herokuapp.com/customer/1">To view a specific user id(on the right of the screen)</a>
+<a href="https://glacial-wave-21085.herokuapp.com/">https://glacial-wave-21085.herokuapp.com/ To view the form and all customers list(on the right)</a><br>
+<a href="https://glacial-wave-21085.herokuapp.com/customer/1">https://glacial-wave-21085.herokuapp.com/customer/1 To view a specific user id(on the right of the screen)</a>
 
 <h5>How to use the API</h5>
-<a href="https://glacial-wave-21085.herokuapp.com/api/customers">To view the api JSON of all customers</a><br>
-<a href="https://glacial-wave-21085.herokuapp.com/api/customers/1">To view the api of a specific customer</a>
+<a href="https://glacial-wave-21085.herokuapp.com/api/customers">https://glacial-wave-21085.herokuapp.com/api/customers To view the api JSON of all customers</a><br>
+<a href="https://glacial-wave-21085.herokuapp.com/api/customers/1">https://glacial-wave-21085.herokuapp.com/api/customers/1 To view the api of a specific customer</a>
 
 <h2> Tech Stack</h2>
 Tech Stack :computer: | Description :clipboard:
