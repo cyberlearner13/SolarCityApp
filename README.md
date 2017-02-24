@@ -3,7 +3,7 @@
 <h1>Solar City App</h1>
 <a href="https://glacial-wave-21085.herokuapp.com/">SolarCity App Website</a>
 <h2>Full Stack MongoDB, Node and React</h2>
-<h2>PROJECT DEADLINE: Jan 24 2017
+<h2>PROJECT DEADLINE: FEB 24 2017
 <h2>PROJECT DURATION: FEB 12 2017 - FEB 24 2017 (12 DAYS)
 
 <h2>Quick Start</h2>
